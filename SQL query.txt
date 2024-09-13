@@ -1,0 +1,16 @@
+LEFT JOIN 
+select T1.T1_Name, T2.T2_name from T1
+left join T1toT2 on T1toT2.T1_FK = T1.T1_PK
+left join T2 on T2.T2_PK = T1toT2.T2_fk
+
+
+RIGHT JOIN
+select T1.T1_Name, T2.T2_name from T2
+right join T1toT2 on T1toT2.T2_FK = T2.T2_PK
+right join T1 on T1.T1_PK = T1toT2.T1_fk
+
+
+где: 
+Т1 - таблица с id и продуктам 
+Т2 - таблица с id и категориями 
+Т1toТ2 - таблица, через которую организована связь "многие ко многим"
